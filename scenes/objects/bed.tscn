@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmcdtrgp6tpp1"]
 
-[ext_resource type="Texture2D" path="res://graphics/objects/bed.png" id="1_24lbd"]
-[ext_resource type="Texture2D" path="res://graphics/objects/pillow_large.png" id="2_qnngj"]
-[ext_resource type="Texture2D" path="res://graphics/objects/pillow_small.png" id="3_w8vff"]
+[ext_resource type="Texture2D" uid="uid://dodem0yrrolc" path="res://graphics/objects/bed.png" id="1_24lbd"]
+[ext_resource type="Texture2D" uid="uid://virxthtrjti0" path="res://graphics/objects/pillow_large.png" id="2_qnngj"]
+[ext_resource type="Texture2D" uid="uid://b4rn2mg7ipftv" path="res://graphics/objects/pillow_small.png" id="3_w8vff"]
 
 [node name="Bed" type="Node2D"]
 
