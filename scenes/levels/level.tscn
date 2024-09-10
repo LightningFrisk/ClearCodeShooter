@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvqlff1faxnm1"]
+[gd_scene load_steps=5 format=3 uid="uid://bvqlff1faxnm1"]
 
 [ext_resource type="Texture2D" uid="uid://cg3stq2qpmjhq" path="res://graphics/car/main.png" id="1_74ijb"]
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_vfv5o"]
 [ext_resource type="Script" path="res://scenes/logo.gd" id="2_pater"]
+[ext_resource type="PackedScene" uid="uid://cltx58levlbbh" path="res://scenes/player/player.tscn" id="4_6qpug"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_vfv5o")
 
 [node name="Car" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_74ijb")
 region_rect = Rect2(0, 0, 92, 71)
 script = ExtResource("2_pater")
+
+[node name="Player" parent="." instance=ExtResource("4_6qpug")]
+position = Vector2(111, 103)
