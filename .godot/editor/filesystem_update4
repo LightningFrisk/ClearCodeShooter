@@ -1,0 +1,5 @@
+res://scenes/player.tscn
+res://scenes/player/player.tscn
+res://scenes/levels/level.tscn
+res://scenes/objects/bed.tscn
+res://scenes/logo.gd

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvqlff1faxnm1"]
+
+[ext_resource type="Script" path="res://scenes/logo.gd" id="2_pater"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Logo" type="Sprite2D" parent="."]
+region_rect = Rect2(0, 0, 92, 71)
+script = ExtResource("2_pater")
