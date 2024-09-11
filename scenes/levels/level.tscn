@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cg3stq2qpmjhq" path="res://graphics/car/main.png" id="1_74ijb"]
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_vfv5o"]
-[ext_resource type="Script" path="res://scenes/logo.gd" id="2_pater"]
+[ext_resource type="Script" path="res://scenes/car.gd" id="2_pater"]
 [ext_resource type="PackedScene" uid="uid://cltx58levlbbh" path="res://scenes/player/player.tscn" id="4_6qpug"]
 
 [node name="Level" type="Node2D"]

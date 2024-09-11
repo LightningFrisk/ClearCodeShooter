@@ -5,10 +5,10 @@ var test_array: Array[String] = ["Hello", "World", "Stuff"]
 func _ready() -> void:
 	$Car.rotation_degrees = 45
 	
-	for i in test_array:
-		print(i)
-	
-	print(test_array[0])
+	#for i in test_array:
+		#print(i)
+	#
+	#print(test_array[0])
 
 func _process(delta):
 	$Car.rotation_degrees += 40 * delta
@@ -17,5 +17,8 @@ func _process(delta):
 		print('position exceeded')
 		$Car.pos.x = 0 
 		
-	#print(Input.is_action_pressed("left"))
 	
+	#print(Input.is_action_pressed("left"))
+
+func test_function():
+	print("This is a test function")
