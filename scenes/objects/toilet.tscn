@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj1g8lwavqjyt"]
+
+[ext_resource type="Texture2D" uid="uid://dkw1rq2tvhp5i" path="res://graphics/objects/toilet.png" id="1_73kpr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhcfc"]
+radius = 109.0
+height = 272.0
+
+[node name="Toilet" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qhcfc")
+
+[node name="ToiletImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_73kpr")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvqlff1faxnm1"]
+[gd_scene load_steps=4 format=3 uid="uid://bvqlff1faxnm1"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_vfv5o"]
 [ext_resource type="PackedScene" uid="uid://cltx58levlbbh" path="res://scenes/player/player.tscn" id="4_6qpug"]
-[ext_resource type="PackedScene" uid="uid://cj1g8lwavqjyt" path="res://scenes/objects/toilet.tscn" id="4_s56qr"]
 [ext_resource type="PackedScene" uid="uid://cmcdtrgp6tpp1" path="res://scenes/objects/bed.tscn" id="5_r348c"]
 
 [node name="Level" type="Node2D"]
@@ -13,6 +12,3 @@ position = Vector2(111, 103)
 
 [node name="Bed" parent="." instance=ExtResource("5_r348c")]
 position = Vector2(622, 181)
-
-[node name="Toilet" parent="." instance=ExtResource("4_s56qr")]
-position = Vector2(40, 505)
