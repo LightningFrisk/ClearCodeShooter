@@ -15,7 +15,7 @@ func _process(_delta):
 	
 	#laser shooting input
 	if Input.is_action_just_pressed("primary action") and can_laser:
-		print("Bang!")
+		#print("Bang!")
 		laser_has_fired.emit()
 		can_laser = false
 		await get_tree().create_timer(0.5).timeout
@@ -23,7 +23,7 @@ func _process(_delta):
 		
 	
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
-		print("Grenade!")
+		#print("Grenade!")
 		grenade_has_fired.emit()
 		can_grenade = false
 		await get_tree().create_timer(2.0).timeout
@@ -32,9 +32,9 @@ func _process(_delta):
 
 
 func _on_timer_timeout_laser() -> void:
-	print("reload laser")
+	#print("reload laser")
 	can_laser = true
 
 func _on_grenade_reload_timer_timeout() -> void:
-	print("reload grenade")
+	#print("reload grenade")
 	can_grenade = true
