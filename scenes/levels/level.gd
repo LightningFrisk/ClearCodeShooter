@@ -11,11 +11,11 @@ func _on_player_grenade_has_fired() -> void:
 	print("player has fired grenade")
 
 
-func _on_player_laser_has_fired() -> void:
+func _on_player_laser_has_fired(pos) -> void:
 	var laser = laser_scene.instantiate()
 	
 	#TODO UPDATE LASER POSITION
-	laser.position = $Player.position
+	laser.position = pos
 	#TODO MOVE THE LASER
 	#TODO ADD LASER TO NOTE 2D
 	add_child(laser)

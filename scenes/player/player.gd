@@ -3,7 +3,7 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
-signal laser_has_fired
+signal laser_has_fired(pos)
 signal grenade_has_fired
 
 
@@ -15,11 +15,12 @@ func _process(_delta):
 	
 	#laser shooting input
 	if Input.is_action_just_pressed("primary action") and can_laser:
-		#print("Bang!")
-		laser_has_fired.emit()
+		var laser_markers = $LaserStartPositions.get_children() #gets random point of where laser is going
+		var selected_laser = laser_markers[randi() % laser_markers.size()] #selects random laser
+		laser_has_fired.emit(selected_laser.global_position) #passes global position to level
 		can_laser = false
-		await get_tree().create_timer(0.5).timeout
-		_on_timer_timeout_laser()
+		await get_tree().create_timer(0.5).timeout #creates timer
+		_on_timer_timeout_laser() #refreshes laser
 		
 	
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
