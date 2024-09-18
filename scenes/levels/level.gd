@@ -1,8 +1,13 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	return
+func _on_gate_player_entered_gate(body):
+	print("player has entered gate")
+	print(body)
 
-func _process(_delta):
-	return
+
+func _on_player_grenade_has_fired() -> void:
+	print("player has fired grenade")
+
+
+func _on_player_laser_has_fired() -> void:
+	print("player has fired laser")
