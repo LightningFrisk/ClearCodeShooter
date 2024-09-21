@@ -3,8 +3,8 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
-signal laser_has_fired(pos)
-signal grenade_has_fired
+signal laser_has_fired(pos, direction)
+signal grenade_has_fired(pos, direction)
 
 
 func _process(_delta):
@@ -12,12 +12,17 @@ func _process(_delta):
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * 500
 	move_and_slide()
+	var player_direction = (get_global_mouse_position() - position).normalized()
+	#rotate player, to always look at mouse
+	look_at(get_global_mouse_position())
+	
 	
 	#laser shooting input
-	if Input.is_action_just_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser:
 		var laser_markers = $LaserStartPositions.get_children() #gets random point of where laser is going
 		var selected_laser = laser_markers[randi() % laser_markers.size()] #selects random laser
-		laser_has_fired.emit(selected_laser.global_position) #passes global position to level
+		
+		laser_has_fired.emit(selected_laser.global_position, player_direction) #passes global position to level
 		can_laser = false
 		await get_tree().create_timer(0.5).timeout #creates timer
 		_on_timer_timeout_laser() #refreshes laser
@@ -25,7 +30,10 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
 		#print("Grenade!")
-		grenade_has_fired.emit()
+		var grenade_markers = $LaserStartPositions.get_children() #gets random point of where grenade is going
+		var selected_grenade = grenade_markers[randi() % grenade_markers.size()] #selects random grenade starting point
+		
+		grenade_has_fired.emit(selected_grenade.global_position, player_direction)
 		can_grenade = false
 		await get_tree().create_timer(2.0).timeout
 		#found this method on stackoverflow it works fine too if I wanted to do this via code, but u can do this with nodes too
