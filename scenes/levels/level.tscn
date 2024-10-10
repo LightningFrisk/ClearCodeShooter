@@ -82,7 +82,8 @@ tile_map_data = PackedByteArray("AAD9//7/AAACAAAAAAD4//7/AAABAAAAAAD5//7/AAABAAA
 tile_set = SubResource("TileSet_xt2il")
 
 [node name="Moss1" type="Sprite2D" parent="Ground"]
-position = Vector2(2401, -485)
+position = Vector2(2598, -392)
+rotation = -0.565487
 texture = ExtResource("6_bdf2p")
 
 [node name="Moss2" type="Sprite2D" parent="Ground"]
@@ -98,7 +99,7 @@ position = Vector2(4219, 1980)
 texture = ExtResource("9_s7t44")
 
 [node name="Moss5" type="Sprite2D" parent="Ground"]
-position = Vector2(2540, 169)
+position = Vector2(2737, 86)
 texture = ExtResource("10_0u4h3")
 
 [node name="Gate" parent="." instance=ExtResource("2_moulv")]
