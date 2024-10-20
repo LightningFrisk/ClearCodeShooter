@@ -22,6 +22,8 @@ func _process(_delta):
 		var laser_markers = $LaserStartPositions.get_children() #gets random point of where laser is going
 		var selected_laser = laser_markers[randi() % laser_markers.size()] #selects random laser
 		
+		$GPUParticles2D.emitting = true;
+		
 		laser_has_fired.emit(selected_laser.global_position, player_direction) #passes global position to level
 		can_laser = false
 		await get_tree().create_timer(0.5).timeout #creates timer

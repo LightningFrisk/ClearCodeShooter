@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bvqlff1faxnm1"]
+[gd_scene load_steps=19 format=4 uid="uid://bvqlff1faxnm1"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_vfv5o"]
 [ext_resource type="PackedScene" uid="uid://dapmmvsv6cli1" path="res://scenes/objects/gate.tscn" id="2_moulv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://buou0kuvqlx17" path="res://graphics/decals/moss/moss_4.png" id="9_s7t44"]
 [ext_resource type="Texture2D" uid="uid://c64qiat1kru1n" path="res://graphics/decals/moss/moss_5.png" id="10_0u4h3"]
 [ext_resource type="PackedScene" uid="uid://tcopfya0vk8s" path="res://scenes/house.tscn" id="13_d75bv"]
+[ext_resource type="PackedScene" uid="uid://bkxyiwddunk8m" path="res://scenes/objects/steam_vent.tscn" id="14_p0r8r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnndf"]
 texture = ExtResource("9_nh6dx")
@@ -125,6 +126,9 @@ texture = ExtResource("10_0u4h3")
 
 [node name="Gate" parent="." instance=ExtResource("2_moulv")]
 position = Vector2(572, -679)
+
+[node name="SteamVent" parent="." instance=ExtResource("14_p0r8r")]
+position = Vector2(63, 354)
 
 [node name="Projectiles" type="Node2D" parent="."]
 

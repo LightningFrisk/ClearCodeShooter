@@ -1,7 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cltx58levlbbh"]
+[gd_scene load_steps=8 format=3 uid="uid://cltx58levlbbh"]
 
 [ext_resource type="Texture2D" uid="uid://cusxlirv2wwrc" path="res://graphics/player/player.png" id="1_2b7fp"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_mtwpj"]
+[ext_resource type="Texture2D" uid="uid://dvrqtiqbluk33" path="res://graphics/decals/white.png" id="2_weyxd"]
+
+[sub_resource type="Gradient" id="Gradient_i0ldu"]
+colors = PackedColorArray(0.6, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3htf4"]
+gradient = SubResource("Gradient_i0ldu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6atko"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 15.0
+initial_velocity_min = 1200.0
+initial_velocity_max = 1500.0
+gravity = Vector3(1000, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+scale_min = 0.25
+scale_max = 0.6
+color = Color(0, 0.980392, 0.984314, 0.545098)
+color_ramp = SubResource("GradientTexture1D_3htf4")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae0kc"]
 radius = 68.9493
@@ -9,6 +31,16 @@ radius = 68.9493
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_mtwpj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(124, 21)
+scale = Vector2(0.5, 0.5)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_6atko")
+texture = ExtResource("2_weyxd")
+lifetime = 0.15
+one_shot = true
+fixed_fps = 15
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(32, 0)
