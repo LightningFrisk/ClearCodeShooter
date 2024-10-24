@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cltx58levlbbh"]
+[gd_scene load_steps=9 format=3 uid="uid://cltx58levlbbh"]
 
 [ext_resource type="Texture2D" uid="uid://cusxlirv2wwrc" path="res://graphics/player/player.png" id="1_2b7fp"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_mtwpj"]
 [ext_resource type="Texture2D" uid="uid://dvrqtiqbluk33" path="res://graphics/decals/white.png" id="2_weyxd"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lptp7"]
+polygon = PackedVector2Array(-25, 61, 40, 42, 55, 40, 55, 51, 91, 52, 91, 43, 101, 41, 103, 35, 117, 36, 126, 31, 129, 20, 124, 6, 118, 2, 106, 2, 103, -4, 93, -5, 82, -12, 72, -9, 57, -26, 45, -28, 39, -40, 30, -49, 21, -62, -3, -61, -19, -57, -40, -48, -57, -36, -66, -19, -64, 5, -54, 30, -46, 41, -38, 55)
 
 [sub_resource type="Gradient" id="Gradient_i0ldu"]
 colors = PackedColorArray(0.6, 1, 1, 1, 1, 1, 1, 0)
@@ -31,6 +34,9 @@ radius = 68.9493
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_mtwpj")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_lptp7")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(124, 21)
