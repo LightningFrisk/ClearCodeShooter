@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bvqlff1faxnm1"]
+[gd_scene load_steps=20 format=4 uid="uid://bvqlff1faxnm1"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_vfv5o"]
 [ext_resource type="PackedScene" uid="uid://dapmmvsv6cli1" path="res://scenes/objects/gate.tscn" id="2_moulv"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c64qiat1kru1n" path="res://graphics/decals/moss/moss_5.png" id="10_0u4h3"]
 [ext_resource type="PackedScene" uid="uid://tcopfya0vk8s" path="res://scenes/house.tscn" id="13_d75bv"]
 [ext_resource type="PackedScene" uid="uid://bkxyiwddunk8m" path="res://scenes/objects/steam_vent.tscn" id="14_p0r8r"]
+[ext_resource type="PackedScene" uid="uid://umlrcdywwyey" path="res://scenes/objects/light_fan_animation.tscn" id="15_w85or"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnndf"]
 texture = ExtResource("9_nh6dx")
@@ -126,14 +127,30 @@ texture = ExtResource("10_0u4h3")
 
 [node name="Gate" parent="." instance=ExtResource("2_moulv")]
 position = Vector2(572, -679)
+metadata/_edit_lock_ = true
 
 [node name="SteamVent" parent="." instance=ExtResource("14_p0r8r")]
 position = Vector2(63, 354)
+metadata/_edit_lock_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_6qpug")]
 position = Vector2(642, 454)
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("15_w85or")]
+position = Vector2(-980, 787)
+scale = Vector2(2, 1.96853)
+autoplay = "default"
+frame = 1
+frame_progress = 0.0
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.172549, 0.172549, 0.172549, 1)
+energy = 3.0
+blend_mode = 1
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade_has_fired" from="Player" to="." method="_on_player_grenade_has_fired"]
