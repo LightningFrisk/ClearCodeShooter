@@ -6,11 +6,14 @@ var can_grenade: bool = true
 signal laser_has_fired(pos, direction)
 signal grenade_has_fired(pos, direction)
 
+@export var max_speed: int = 500
+var speed: int = max_speed
+
 
 func _process(_delta):
 	#input
 	var direction = Input.get_vector("left","right","up","down")
-	velocity = direction * 500
+	velocity = direction * speed
 	move_and_slide()
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	#rotate player, to always look at mouse
