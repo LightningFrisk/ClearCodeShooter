@@ -67,13 +67,13 @@ one_shot = true
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(127, 21)
+position = Vector2(135, 21)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(121, 28)
+position = Vector2(131, 33)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(121, 15)
+position = Vector2(131, 9)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_laser"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
