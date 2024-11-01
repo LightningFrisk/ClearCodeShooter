@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ykqqbk3d65os" path="res://graphics/tilesets/interior.png" id="1_j88js"]
 [ext_resource type="PackedScene" uid="uid://d2vtsha43yv3v" path="res://scenes/objects/simple_light.tscn" id="2_e8nxr"]
 [ext_resource type="PackedScene" uid="uid://b0gil8jv242w6" path="res://scenes/objects/wall_light.tscn" id="3_ind3f"]
-[ext_resource type="PackedScene" uid="uid://cj1g8lwavqjyt" path="res://scenes/objects/toilet.tscn" id="3_pb1iu"]
+[ext_resource type="PackedScene" uid="uid://cj1g8lwavqjyt" path="res://scenes/objects/ItemContainer.tscn" id="3_pb1iu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6lcp"]
 size = Vector2(3683, 2871)
