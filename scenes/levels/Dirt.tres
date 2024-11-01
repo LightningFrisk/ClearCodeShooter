@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b5gfq2tcvu3st"]
+
+[ext_resource type="Texture2D" uid="uid://vtur2gkkhuqs" path="res://graphics/tilesets/soil.png" id="1_qraql"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijijl"]
+texture = ExtResource("1_qraql")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[resource]
+tile_size = Vector2i(390, 390)
+sources/1 = SubResource("TileSetAtlasSource_ijijl")

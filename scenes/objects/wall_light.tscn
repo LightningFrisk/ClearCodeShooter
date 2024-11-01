@@ -26,7 +26,7 @@ texture = ExtResource("1_whl2e")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-502, -128)
-color = Color(1, 0.784314, 0, 1)
+color = Color(0.588235, 1, 1, 1)
 energy = 8.0
 shadow_enabled = true
 shadow_color = Color(0.192157, 0.141176, 0, 0.0392157)

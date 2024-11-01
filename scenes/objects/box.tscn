@@ -1,18 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://2srf5l0cs7j8"]
+[gd_scene load_steps=6 format=3 uid="uid://2srf5l0cs7j8"]
 
 [ext_resource type="PackedScene" uid="uid://cj1g8lwavqjyt" path="res://scenes/objects/ItemContainer.tscn" id="1_5aisi"]
-[ext_resource type="Texture2D" uid="uid://c2uqxpe28kgct" path="res://graphics/objects/Box.png" id="2_b8g83"]
 [ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_gq6vl"]
+[ext_resource type="Texture2D" uid="uid://cfjsivbrsm6cd" path="res://graphics/objects/box/base.png" id="3_yhmog"]
+[ext_resource type="Texture2D" uid="uid://buqsc8aljfgqg" path="res://graphics/objects/box/lid.png" id="4_5lw11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcj"]
-size = Vector2(354, 254)
+size = Vector2(406, 188)
 
 [node name="box" instance=ExtResource("1_5aisi")]
 script = ExtResource("2_gq6vl")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 2)
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_ihfcj")
 
 [node name="ItemSprite" parent="." index="1"]
-texture = ExtResource("2_b8g83")
+texture = ExtResource("3_yhmog")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(-1, 13)
+texture = ExtResource("4_5lw11")

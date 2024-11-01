@@ -1,5 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2cowbwhqaybr"]
+[gd_scene load_steps=9 format=4 uid="uid://c2cowbwhqaybr"]
 
 [ext_resource type="PackedScene" uid="uid://bvqlff1faxnm1" path="res://scenes/levels/level.tscn" id="1_7haau"]
+[ext_resource type="TileSet" uid="uid://ce414ipr7h20c" path="res://scenes/levels/house.tres" id="2_3ddvf"]
+[ext_resource type="PackedScene" uid="uid://umlrcdywwyey" path="res://scenes/objects/light_fan_animation.tscn" id="3_m3e1i"]
+[ext_resource type="PackedScene" uid="uid://cmcdtrgp6tpp1" path="res://scenes/objects/bed.tscn" id="4_ii0ap"]
+[ext_resource type="PackedScene" uid="uid://d2vtsha43yv3v" path="res://scenes/objects/simple_light.tscn" id="5_ypk1s"]
+[ext_resource type="PackedScene" uid="uid://b0gil8jv242w6" path="res://scenes/objects/wall_light.tscn" id="6_1lu13"]
+[ext_resource type="PackedScene" uid="uid://vhm3k8cj6wsv" path="res://scenes/objects/toilet.tscn" id="7_0uqce"]
+[ext_resource type="PackedScene" uid="uid://2srf5l0cs7j8" path="res://scenes/objects/box.tscn" id="8_lxufy"]
 
 [node name="Inside" instance=ExtResource("1_7haau")]
+
+[node name="Ground" type="Node2D" parent="." index="0"]
+
+[node name="Floor" type="TileMapLayer" parent="Ground" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wAAAAABAAEAAAD+////AAABAAEAAAD+//7/AAABAAEAAAD///7/AAABAAEAAAD///3/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAD9//7/AAABAAEAAAD//wIAAAABAAEAAAD+/wIAAAABAAEAAAD+/wEAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD8////AAABAAEAAAD9////AAABAAEAAAD9/wIAAAABAAEAAAD8/wEAAAABAAEAAAD8//7/AAABAAEAAAD7//7/AAABAAEAAAD8//3/AAABAAEAAAD9//3/AAABAAEAAAD+//3/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD9/wEAAAABAAEAAAD7/wAAAAABAAEAAAD7////AAABAAEAAAADAP3/AAABAAEAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAABAAMAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAP//AAABAAEAAAADAP7/AAABAAEAAAAAAAQAAAABAAEAAAD//wQAAAABAAEAAAD+/wQAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD8/wIAAAABAAEAAAD8/wMAAAABAAEAAAD9/wQAAAABAAEAAAABAAQAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAACAAQAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAQAAAABAAEAAAD8/wQAAAABAAEAAAD7/wMAAAABAAEAAAD7/wIAAAABAAEAAAD7/wEAAAABAAEAAAD7/wQAAAABAAEAAAD6////AAABAAEAAAD6//7/AAABAAEAAAD6//3/AAABAAEAAAD7//3/AAABAAEAAAD7//z/AAABAAEAAAD8//z/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD6//z/AAABAAEAAAD5//7/AAABAAEAAAD5////AAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD6/wIAAAABAAEAAAD6/wMAAAABAAEAAAD6/wQAAAABAAEAAAD6/wAAAAABAAEAAAD5/wIAAAABAAEAAAD5/wMAAAABAAEAAAD5/wQAAAABAAEAAAD5//3/AAABAAEAAAD5//z/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAGAAQAAAABAAEAAAAFAAQAAAABAAEAAAAFAAMAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAABAAEAAAAGAP//AAABAAEAAAAGAP7/AAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAGAP3/AAABAAEAAAAFAP3/AAABAAEAAAAEAP3/AAABAAEAAAA=")
+tile_set = ExtResource("2_3ddvf")
+
+[node name="Interior Walls" type="TileMapLayer" parent="Ground" index="1"]
+tile_map_data = PackedByteArray("AAD5//7/AAAEAAcAAAD6//7/AAAAAAYAAAD7//7/AAAAAAYAAAD8//7/AAAAAAYAAAD9//7/AAACAAcAAAD+//7/AAAGAAcAAAABAP7/AAAEAAcAAAACAP7/AAACAAcAAAADAP7/AAAAAAYAAAAEAP7/AAAAAAYAAAAFAP7/AAAAAAYAAAAGAP7/AAAAAAYAAAAHAP7/AAAGAAcAAAD9////AAABAAYAAAD9/wAAAAABAAYAAAD9/wEAAAABAAYAAAD9/wIAAAABAAYAAAACAAIAAAABAAYAAAACAAEAAAABAAYAAAACAAAAAAABAAYAAAACAP//AAABAAYAAAACAAQAAAAFAAgAAAD9/wQAAAAFAAgAAAD6/wAAAAAAAAYAAAD7/wAAAAAAAAYAAAD5/wAAAAAEAAcAAAA=")
+tile_set = ExtResource("2_3ddvf")
+
+[node name="Exterior Walls" type="TileMapLayer" parent="Ground" index="2"]
+tile_map_data = PackedByteArray("AAD5//z/AAADAAAAAAD5//3/AAADAAEAAAD5//7/AAADAAEAAAD5////AAADAAEAAAD5/wAAAAADAAEAAAD5/wEAAAADAAEAAAD5/wIAAAADAAEAAAD5/wMAAAADAAEAAAD5/wQAAAADAAIAAAD6/wQAAAAEAAIAAAD7/wQAAAAEAAIAAAD8/wQAAAAEAAIAAAD9/wQAAAAEAAIAAAD+/wQAAAAEAAIAAAD//wQAAAAEAAIAAAAAAAQAAAAEAAIAAAABAAQAAAAEAAIAAAACAAQAAAAEAAIAAAADAAQAAAAEAAIAAAAEAAQAAAAEAAIAAAAFAAQAAAAEAAIAAAAGAAQAAAAEAAIAAAAHAAQAAAAFAAIAAAAHAAMAAAAFAAEAAAAHAAIAAAAFAAEAAAAHAAEAAAAFAAEAAAAHAAAAAAAFAAEAAAAHAP//AAAFAAEAAAAHAP7/AAAFAAEAAAAHAP3/AAAFAAEAAAAHAPz/AAAFAAAAAAAGAPz/AAAEAAAAAAAFAPz/AAAEAAAAAAAEAPz/AAAEAAAAAAADAPz/AAAEAAAAAAD8//z/AAAEAAAAAAD7//z/AAAEAAAAAAD9//z/AAAEAAAAAAD+//z/AAAEAAAAAAD///z/AAAEAAAAAAAAAPz/AAAEAAAAAAABAPz/AAAEAAAAAAACAPz/AAAEAAAAAAD6//z/AAAEAAAAAAA=")
+tile_set = ExtResource("2_3ddvf")
+
+[node name="LightFanAnimation" parent="Ground" index="3" instance=ExtResource("3_m3e1i")]
+position = Vector2(0, -1)
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="Node2D" parent="." index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Bed" parent="Objects" index="0" instance=ExtResource("4_ii0ap")]
+position = Vector2(-2133, 983)
+rotation = 3.14159
+
+[node name="SimpleLight" parent="Objects" index="1" instance=ExtResource("5_ypk1s")]
+position = Vector2(-1716, 1649)
+rotation = -3.14159
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight2" parent="Objects" index="2" instance=ExtResource("5_ypk1s")]
+position = Vector2(-1561, -1292)
+metadata/_edit_lock_ = true
+
+[node name="WallLight" parent="Objects" index="3" instance=ExtResource("6_1lu13")]
+position = Vector2(-506, -1388)
+rotation = -3.14159
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight3" parent="Objects" index="4" instance=ExtResource("5_ypk1s")]
+position = Vector2(-1728, -549)
+
+[node name="Toilet" parent="Objects" index="5" instance=ExtResource("7_0uqce")]
+position = Vector2(-2328, -188)
+rotation = 4.71239
+
+[node name="SimpleLight4" parent="Objects" index="6" instance=ExtResource("5_ypk1s")]
+position = Vector2(1944, -1279)
+
+[node name="box" parent="Objects" index="7" instance=ExtResource("8_lxufy")]
+position = Vector2(1223, -452)
+
+[node name="box2" parent="Objects" index="8" instance=ExtResource("8_lxufy")]
+position = Vector2(1781, 457)
+rotation = 1.5708
+
+[node name="box3" parent="Objects" index="9" instance=ExtResource("8_lxufy")]
+position = Vector2(2619, 1484)
+rotation = -3.70533
+
+[node name="box4" parent="Objects" index="10" instance=ExtResource("8_lxufy")]
+position = Vector2(1964, 692)
+rotation = 5.03527
+
+[node name="box5" parent="Objects" index="11" instance=ExtResource("8_lxufy")]
+position = Vector2(2633, -377)
+rotation = 0.322886
+
+[node name="SimpleLight5" parent="Objects" index="12" instance=ExtResource("5_ypk1s")]
+position = Vector2(2782, 1602)
+rotation = -4.02822
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+energy = 0.7
+blend_mode = 1
