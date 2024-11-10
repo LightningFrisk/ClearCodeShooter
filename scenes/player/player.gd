@@ -9,7 +9,6 @@ signal grenade_has_fired(pos, direction)
 @export var max_speed: int = 500
 var speed: int = max_speed
 
-
 func _process(_delta):
 	#input
 	var direction = Input.get_vector("left","right","up","down")
@@ -21,7 +20,8 @@ func _process(_delta):
 	
 	
 	#laser shooting input
-	if Input.is_action_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1
 		var laser_markers = $LaserStartPositions.get_children() #gets random point of where laser is going
 		var selected_laser = laser_markers[randi() % laser_markers.size()] #selects random laser
 		
@@ -29,12 +29,13 @@ func _process(_delta):
 		
 		laser_has_fired.emit(selected_laser.global_position, player_direction) #passes global position to level
 		can_laser = false
-		await get_tree().create_timer(0.5).timeout #creates timer
+		await get_tree().create_timer(0.3).timeout #creates timer
 		_on_timer_timeout_laser() #refreshes laser
 		
 	
-	if Input.is_action_just_pressed("secondary action") and can_grenade:
+	if Input.is_action_just_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
 		#print("Grenade!")
+		Globals.grenade_amount -= 1
 		var grenade_markers = $LaserStartPositions.get_children() #gets random point of where grenade is going
 		var selected_grenade = grenade_markers[randi() % grenade_markers.size()] #selects random grenade starting point
 		

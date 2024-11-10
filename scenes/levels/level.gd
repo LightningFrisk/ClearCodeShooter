@@ -12,11 +12,12 @@ func _on_gate_player_entered_gate(_body):
 
 
 func _on_player_grenade_has_fired(pos, direction) -> void:
-	print("player has fired grenade")
+	#print("player has fired grenade")
 	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+	$UI.update_grenade_text()
 
 
 func _on_player_laser_has_fired(pos, direction) -> void:
@@ -25,6 +26,7 @@ func _on_player_laser_has_fired(pos, direction) -> void:
 	laser.position = pos
 	laser.direction = direction
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()
 
 
 func _on_house_player_entered() -> void:
