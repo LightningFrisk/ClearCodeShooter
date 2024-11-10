@@ -8,10 +8,16 @@ var red: Color = Color(.9,0,0,1) #rgba tuple
 @onready var grenade_label: Label = $GrenadeCounter/VBoxContainer/Grenade
 @onready var laser_icon: TextureRect = $LaserCounter/VBoxContainer/TextureRect
 @onready var grenade_icon: TextureRect = $GrenadeCounter/VBoxContainer/TextureRect
+@onready var health_bar: TextureProgressBar = $MarginContainer/TextureProgressBar
 
 func _ready():
+	Globals.connect("health_change", update_health_text)
+	Globals.connect("laser_change", update_laser_text)
+	Globals.connect("grenade_change", update_grenade_text)
+	
 	update_laser_text()
 	update_grenade_text()
+	update_health_text()
 	
 func update_color(amount: int, label: Label, icon: TextureRect):
 	if amount <= 0:
@@ -28,3 +34,6 @@ func update_laser_text():
 func update_grenade_text():
 	grenade_label.text = str(Globals.grenade_amount)
 	update_color(Globals.grenade_amount, grenade_label, grenade_icon)
+
+func update_health_text():
+	health_bar.value = Globals.health

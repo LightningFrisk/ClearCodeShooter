@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://j4cpvev14b5c"]
+[gd_scene load_steps=19 format=4 uid="uid://j4cpvev14b5c"]
 
 [ext_resource type="PackedScene" uid="uid://bvqlff1faxnm1" path="res://scenes/levels/level.tscn" id="1_3vbdl"]
 [ext_resource type="Texture2D" uid="uid://ftorsjdapvrl" path="res://graphics/ground/stones.png" id="2_4c83t"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bkxyiwddunk8m" path="res://scenes/objects/steam_vent.tscn" id="13_blclt"]
 [ext_resource type="PackedScene" uid="uid://vhm3k8cj6wsv" path="res://scenes/objects/toilet.tscn" id="15_gnks6"]
 [ext_resource type="PackedScene" uid="uid://2srf5l0cs7j8" path="res://scenes/objects/box.tscn" id="16_hvnk6"]
+[ext_resource type="PackedScene" uid="uid://dv3us2cj5yhy0" path="res://scenes/Items/item.tscn" id="18_tln3c"]
 
 [node name="Outside" instance=ExtResource("1_3vbdl")]
 script = ExtResource("2_r8ty3")
@@ -108,6 +109,9 @@ frame_progress = 0.0
 [node name="SteamVent" parent="Ground" index="15" instance=ExtResource("13_blclt")]
 position = Vector2(63, 354)
 metadata/_edit_lock_ = true
+
+[node name="Item" parent="." index="1" instance=ExtResource("18_tln3c")]
+position = Vector2(1062, 473)
 
 [node name="Gate" parent="." index="2" instance=ExtResource("2_jfkkx")]
 position = Vector2(567, -878)

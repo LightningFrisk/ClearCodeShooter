@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c2cowbwhqaybr"]
+[gd_scene load_steps=14 format=4 uid="uid://c2cowbwhqaybr"]
 
 [ext_resource type="PackedScene" uid="uid://bvqlff1faxnm1" path="res://scenes/levels/level.tscn" id="1_7haau"]
 [ext_resource type="TileSet" uid="uid://ce414ipr7h20c" path="res://scenes/levels/house.tres" id="2_3ddvf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://vhm3k8cj6wsv" path="res://scenes/objects/toilet.tscn" id="7_0uqce"]
 [ext_resource type="PackedScene" uid="uid://2srf5l0cs7j8" path="res://scenes/objects/box.tscn" id="8_lxufy"]
 [ext_resource type="Texture2D" uid="uid://d0nuqumb56h7l" path="res://graphics/lights/textures/circle.png" id="10_0w5pt"]
+[ext_resource type="PackedScene" uid="uid://dv3us2cj5yhy0" path="res://scenes/Items/item.tscn" id="12_1m1m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ub8u"]
 size = Vector2(483.715, 270.739)
@@ -19,6 +20,8 @@ size = Vector2(483.715, 270.739)
 script = ExtResource("2_danmp")
 
 [node name="Ground" type="Node2D" parent="." index="0"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -149,7 +152,10 @@ position = Vector2(-239.879, 13.8162)
 scale = Vector2(1.46317, 1.8777)
 shape = SubResource("RectangleShape2D_0ub8u")
 
-[node name="Player" parent="." index="5"]
+[node name="Item" parent="." index="4" instance=ExtResource("12_1m1m4")]
+position = Vector2(-767, -408)
+
+[node name="Player" parent="." index="6"]
 position = Vector2(-2271, -963)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]

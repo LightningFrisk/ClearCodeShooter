@@ -3,8 +3,10 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
+
 signal laser_has_fired(pos, direction)
 signal grenade_has_fired(pos, direction)
+#signal update_stats
 
 @export var max_speed: int = 500
 var speed: int = max_speed
@@ -45,7 +47,6 @@ func _process(_delta):
 		#found this method on stackoverflow it works fine too if I wanted to do this via code, but u can do this with nodes too
 		_on_grenade_reload_timer_timeout()
 
-
 func _on_timer_timeout_laser() -> void:
 	#print("reload laser")
 	can_laser = true
@@ -53,3 +54,11 @@ func _on_timer_timeout_laser() -> void:
 func _on_grenade_reload_timer_timeout() -> void:
 	#print("reload grenade")
 	can_grenade = true
+
+#func add_item(type: String) -> void:
+	#if type == 'laser':
+		#Globals.laser_amount += 10
+	#if type == 'grenade':
+		#Globals.grenade_amount += 2
+	#
+	#update_stats.emit()
