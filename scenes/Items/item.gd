@@ -29,7 +29,7 @@ func _process(delta):
 func _on_body_entered(_body: Node2D) -> void:
 	#body.add_item(type)
 	if type == 'laser':
-		Globals.laser_amount += 10
+		Globals.laser_amount += 5
 	if type == 'grenade':
 		Globals.grenade_amount += 2
 	if type == 'health':

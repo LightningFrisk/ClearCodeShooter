@@ -27,7 +27,6 @@ func _on_player_grenade_has_fired(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
-	$UI.update_grenade_text()
 
 func _on_player_laser_has_fired(pos, direction) -> void:
 	var laser = laser_scene.instantiate() as Area2D
@@ -35,7 +34,6 @@ func _on_player_laser_has_fired(pos, direction) -> void:
 	laser.position = pos
 	laser.direction = direction
 	$Projectiles.add_child(laser)
-	$UI.update_laser_text()
 
 func _on_house_player_entered() -> void:
 	var tween = get_tree().create_tween()
@@ -46,7 +44,3 @@ func _on_house_player_entered() -> void:
 func _on_house_player_exited() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(.55,.55), 2)
-
-#func _on_player_update_stats() -> void:
-	#$UI.update_laser_text()
-	#$UI.update_grenade_text()
