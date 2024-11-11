@@ -14,10 +14,27 @@ script = ExtResource("2_gq6vl")
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_ihfcj")
+metadata/_edit_lock_ = true
 
-[node name="ItemSprite" parent="." index="1"]
+[node name="BaseSprite" parent="." index="1"]
 texture = ExtResource("3_yhmog")
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
-position = Vector2(-1, 13)
+[node name="LidSprite" parent="." index="2"]
 texture = ExtResource("4_5lw11")
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+position = Vector2(-125, -17)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPositions" index="1"]
+position = Vector2(-60, -26)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPositions" index="2"]
+position = Vector2(56, -22)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPositions" index="3"]
+position = Vector2(116, 2)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPositions" index="4"]
+position = Vector2(-7, 11)

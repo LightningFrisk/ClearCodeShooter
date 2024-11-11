@@ -23,6 +23,8 @@
 script = ExtResource("2_r8ty3")
 
 [node name="Ground" type="Node2D" parent="." index="0"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Base Ground" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -49,71 +51,84 @@ rotation = -1.13097
 texture = ExtResource("5_dohin")
 metadata/_edit_lock_ = true
 
-[node name="Toilet" parent="Ground" index="4" instance=ExtResource("15_gnks6")]
-position = Vector2(1989, 1957)
-rotation = 3.14159
-
-[node name="box" parent="Ground" index="5" instance=ExtResource("16_hvnk6")]
-position = Vector2(1679, 1952)
-
-[node name="Wall" type="TileMapLayer" parent="Ground" index="6"]
+[node name="Wall" type="TileMapLayer" parent="Ground" index="4"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9//7/AAACAAAAAAD4//7/AAABAAAAAAD5//7/AAABAAAAAAD6//7/AAABAAAAAAD7//7/AAABAAAAAAD8//7/AAABAAEAAAAGAPr/AAAAAAIAAAAGAPv/AAAAAAIAAAAGAPz/AAAAAAIAAAAGAP3/AAAAAAIAAAAGAP7/AAABAAIAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAACAAEAAAALAP//AAAAAAIAAAALAAAAAAAAAAIAAAALAAEAAAAAAAIAAAALAAIAAAAAAAIAAAALAAMAAAAAAAIAAAALAAQAAAAAAAIAAAALAAUAAAACAAIAAAAKAAUAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAAAAAAAAAD8/wAAAAAAAAIAAAD8////AAAAAAIAAAA=")
 tile_set = ExtResource("9_qm5lt")
 metadata/_edit_lock_ = true
 
-[node name="House" parent="Ground" index="7" instance=ExtResource("7_c5ld4")]
+[node name="House" parent="Ground" index="5" instance=ExtResource("7_c5ld4")]
 position = Vector2(-519, 2443)
 rotation = -2.54818
 metadata/_edit_lock_ = true
 
-[node name="Moss7" type="Sprite2D" parent="Ground" index="8"]
+[node name="Moss7" type="Sprite2D" parent="Ground" index="6"]
 position = Vector2(2315, -1410)
 rotation = -1.13097
 texture = ExtResource("5_dohin")
 metadata/_edit_lock_ = true
 
-[node name="Moss1" type="Sprite2D" parent="Ground" index="9"]
+[node name="Moss1" type="Sprite2D" parent="Ground" index="7"]
 position = Vector2(2598, -392)
 rotation = -0.565487
 texture = ExtResource("5_dohin")
 metadata/_edit_lock_ = true
 
-[node name="Moss2" type="Sprite2D" parent="Ground" index="10"]
+[node name="Moss2" type="Sprite2D" parent="Ground" index="8"]
 position = Vector2(4358, -442)
 texture = ExtResource("8_k3v71")
 metadata/_edit_lock_ = true
 
-[node name="Moss3" type="Sprite2D" parent="Ground" index="11"]
+[node name="Moss3" type="Sprite2D" parent="Ground" index="9"]
 position = Vector2(3276, -424)
 texture = ExtResource("9_mpt8n")
 metadata/_edit_lock_ = true
 
-[node name="Moss4" type="Sprite2D" parent="Ground" index="12"]
+[node name="Moss4" type="Sprite2D" parent="Ground" index="10"]
 position = Vector2(4219, 1980)
 texture = ExtResource("10_co0h8")
 metadata/_edit_lock_ = true
 
-[node name="Moss5" type="Sprite2D" parent="Ground" index="13"]
+[node name="Moss5" type="Sprite2D" parent="Ground" index="11"]
 position = Vector2(2737, 86)
 texture = ExtResource("11_4bvsi")
 metadata/_edit_lock_ = true
 
-[node name="LightFanAnimation" parent="Ground" index="14" instance=ExtResource("12_j6ast")]
+[node name="LightFanAnimation" parent="Ground" index="12" instance=ExtResource("12_j6ast")]
 position = Vector2(-1074, 1130)
 scale = Vector2(2, 1.96853)
 autoplay = "default"
 frame = 1
 frame_progress = 0.0
 
-[node name="SteamVent" parent="Ground" index="15" instance=ExtResource("13_blclt")]
-position = Vector2(63, 354)
-metadata/_edit_lock_ = true
+[node name="Objects" type="Node2D" parent="." index="1"]
 
-[node name="Item" parent="." index="1" instance=ExtResource("18_tln3c")]
-position = Vector2(1062, 473)
+[node name="Toilet" parent="Objects" index="0" instance=ExtResource("15_gnks6")]
+position = Vector2(1228, 244)
+rotation = 1.5708
 
-[node name="Gate" parent="." index="2" instance=ExtResource("2_jfkkx")]
+[node name="box" parent="Objects" index="1" instance=ExtResource("16_hvnk6")]
+position = Vector2(3, 23)
+
+[node name="Toilet2" parent="Objects" index="2" instance=ExtResource("15_gnks6")]
+position = Vector2(1230, 503)
+rotation = 1.5708
+
+[node name="box2" parent="Objects" index="3" instance=ExtResource("16_hvnk6")]
+position = Vector2(-18, 426)
+
+[node name="SteamVent" parent="Objects" index="4" instance=ExtResource("13_blclt")]
+position = Vector2(166, 1063)
+
+[node name="Items" type="Node2D" parent="." index="2"]
+
+[node name="Item" parent="Items" index="0" instance=ExtResource("18_tln3c")]
+position = Vector2(1076, 28)
+
+[node name="Gate" parent="." index="3" instance=ExtResource("2_jfkkx")]
 position = Vector2(567, -878)
+
+[node name="Player" parent="." index="5"]
+position = Vector2(630, 15)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
