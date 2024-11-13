@@ -13,9 +13,9 @@ signal laser(pos, direction)
 func hit():
 	if can_damage:
 		health -= 10
-		print(health)
 		can_damage = false
 		$Timers/DamageCooldown.start()
+		$Sprite2D.material.set_shader_parameter("progress",1)
 	if health <= 0:
 		queue_free()
 
@@ -39,6 +39,7 @@ func _on_attack_area_body_exited(_body: Node2D) -> void:
 
 func _on_damage_cooldown_timeout() -> void:
 	can_damage = true
+	$Sprite2D.material.set_shader_parameter("progress",0)
 
 func _on_laser_cooldown_timeout() -> void:
 	can_laser = true
