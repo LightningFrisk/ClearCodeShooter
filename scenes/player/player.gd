@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var can_laser: bool = true
 var can_grenade: bool = true
-
+var can_damage: bool = true
 
 signal laser_has_fired(pos, direction)
 signal grenade_has_fired(pos, direction)
@@ -11,14 +11,29 @@ signal grenade_has_fired(pos, direction)
 @export var max_speed: int = 500
 var speed: int = max_speed
 
+func hit():
+	print("Player was hit")
+	Globals.health -= 10
+	#if can_damage: #this works, but guide does it in globals so he can show off create_timer
+		#Globals.health -= 10
+		#print(Globals.health)
+		#can_damage = false
+		#$DamageCooldown.start()
+	#if Globals.health <= 0:
+		#queue_free()
+
 func _process(_delta):
 	#input
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed
 	move_and_slide()
-	var player_direction = (get_global_mouse_position() - position).normalized()
+	Globals.player_pos = global_position
+	
+	
 	#rotate player, to always look at mouse
 	look_at(get_global_mouse_position())
+	
+	var player_direction = (get_global_mouse_position() - position).normalized() #direction - position, normalize everything
 	
 	
 	#laser shooting input
@@ -55,10 +70,5 @@ func _on_grenade_reload_timer_timeout() -> void:
 	#print("reload grenade")
 	can_grenade = true
 
-#func add_item(type: String) -> void:
-	#if type == 'laser':
-		#Globals.laser_amount += 10
-	#if type == 'grenade':
-		#Globals.grenade_amount += 2
-	#
-	#update_stats.emit()
+#func _on_damage_cooldown_timeout() -> void:
+	#can_damage = true

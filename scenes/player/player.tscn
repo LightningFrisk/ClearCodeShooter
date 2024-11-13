@@ -31,7 +31,7 @@ radius = 68.9493
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lptp7"]
 polygon = PackedVector2Array(-25, 61, 40, 42, 55, 40, 55, 51, 91, 52, 91, 43, 101, 41, 103, 35, 117, 36, 126, 31, 129, 20, 124, 6, 118, 2, 106, 2, 103, -4, 93, -5, 82, -12, 72, -9, 57, -26, 45, -28, 39, -40, 30, -49, 21, -62, -3, -61, -19, -57, -40, -48, -57, -36, -66, -19, -64, 5, -54, 30, -46, 41, -38, 55)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_mtwpj")
 
@@ -75,5 +75,10 @@ position = Vector2(131, 33)
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(131, 9)
 
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_laser"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
+[connection signal="timeout" from="DamageCooldown" to="." method="_on_damage_cooldown_timeout"]

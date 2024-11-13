@@ -18,9 +18,23 @@ var grenade_amount = 5:
 		grenade_amount = value
 		grenade_change.emit()
 
-var health = 90:
+var can_damage: bool = true
+var health = 100:
 	get:
 		return health
 	set(value):
-		health = value
+		if value > health:
+			health = min(value, 100)
+		else:
+			if can_damage:
+				health = value
+				can_damage = false
+				player_can_damage_timer()
+				health_change.emit()
 		health_change.emit()
+
+func player_can_damage_timer():
+	await get_tree().create_timer(.5).timeout
+	can_damage = true
+
+var player_pos: Vector2

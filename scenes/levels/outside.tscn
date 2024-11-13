@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://buou0kuvqlx17" path="res://graphics/decals/moss/moss_4.png" id="10_co0h8"]
 [ext_resource type="Texture2D" uid="uid://c64qiat1kru1n" path="res://graphics/decals/moss/moss_5.png" id="11_4bvsi"]
 [ext_resource type="PackedScene" uid="uid://umlrcdywwyey" path="res://scenes/objects/light_fan_animation.tscn" id="12_j6ast"]
-[ext_resource type="PackedScene" uid="uid://bkxyiwddunk8m" path="res://scenes/objects/steam_vent.tscn" id="13_blclt"]
 [ext_resource type="PackedScene" uid="uid://vhm3k8cj6wsv" path="res://scenes/objects/toilet.tscn" id="15_gnks6"]
 [ext_resource type="PackedScene" uid="uid://2srf5l0cs7j8" path="res://scenes/objects/box.tscn" id="16_hvnk6"]
+[ext_resource type="PackedScene" uid="uid://c20dh1qmn5j43" path="res://scenes/enemies/scout.tscn" id="18_eixs4"]
 [ext_resource type="PackedScene" uid="uid://dv3us2cj5yhy0" path="res://scenes/Items/item.tscn" id="18_tln3c"]
 
 [node name="Outside" instance=ExtResource("1_3vbdl")]
@@ -104,21 +104,16 @@ frame_progress = 0.0
 [node name="Objects" type="Node2D" parent="." index="1"]
 
 [node name="Toilet" parent="Objects" index="0" instance=ExtResource("15_gnks6")]
-position = Vector2(1228, 244)
-rotation = 1.5708
+position = Vector2(1354, 28)
 
 [node name="box" parent="Objects" index="1" instance=ExtResource("16_hvnk6")]
 position = Vector2(3, 23)
 
 [node name="Toilet2" parent="Objects" index="2" instance=ExtResource("15_gnks6")]
-position = Vector2(1230, 503)
-rotation = 1.5708
+position = Vector2(2045, 42)
 
 [node name="box2" parent="Objects" index="3" instance=ExtResource("16_hvnk6")]
-position = Vector2(-18, 426)
-
-[node name="SteamVent" parent="Objects" index="4" instance=ExtResource("13_blclt")]
-position = Vector2(166, 1063)
+position = Vector2(-432, 21)
 
 [node name="Items" type="Node2D" parent="." index="2"]
 
@@ -130,6 +125,9 @@ position = Vector2(567, -878)
 
 [node name="Player" parent="." index="5"]
 position = Vector2(630, 15)
+
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("18_eixs4")]
+position = Vector2(707, 824)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

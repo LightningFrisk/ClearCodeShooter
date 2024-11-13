@@ -8,6 +8,8 @@ var item_scene: PackedScene = preload("res://scenes/Items/item.tscn")
 func _ready():
 	for container in get_tree().get_nodes_in_group("Container"):
 		container.connect("open", _on_container_opened)
+	for scout in get_tree().get_nodes_in_group("Scouts"):
+		scout.connect("laser", _on_scout_laser_has_fired)
 
 func _on_container_opened(pos, direction):
 	var item = item_scene.instantiate()
@@ -29,11 +31,10 @@ func _on_player_grenade_has_fired(pos, direction) -> void:
 	$Projectiles.add_child(grenade)
 
 func _on_player_laser_has_fired(pos, direction) -> void:
-	var laser = laser_scene.instantiate() as Area2D
-	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
-	laser.position = pos
-	laser.direction = direction
-	$Projectiles.add_child(laser)
+	create_laser(pos, direction)
+
+func _on_scout_laser_has_fired(pos, direction) -> void:
+	create_laser(pos, direction)
 
 func _on_house_player_entered() -> void:
 	var tween = get_tree().create_tween()
@@ -44,3 +45,10 @@ func _on_house_player_entered() -> void:
 func _on_house_player_exited() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(.55,.55), 2)
+	
+func create_laser(pos, direction):
+	var laser = laser_scene.instantiate() as Area2D
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
+	laser.position = pos
+	laser.direction = direction
+	$Projectiles.add_child(laser)

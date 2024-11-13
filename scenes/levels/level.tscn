@@ -20,5 +20,7 @@ position_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("3_gw535")]
 
+[node name="Enemies" type="Node2D" parent="."]
+
 [connection signal="grenade_has_fired" from="Player" to="." method="_on_player_grenade_has_fired"]
 [connection signal="laser_has_fired" from="Player" to="." method="_on_player_laser_has_fired"]
