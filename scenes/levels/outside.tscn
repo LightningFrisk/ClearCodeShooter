@@ -129,7 +129,6 @@ position = Vector2(630, 15)
 
 [node name="Enemies" parent="." index="7"]
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("18_eixs4")]
 position = Vector2(-1115, 3392)
@@ -140,16 +139,13 @@ position = Vector2(1688, 615)
 [node name="Scout3" parent="Enemies" index="2" instance=ExtResource("18_eixs4")]
 position = Vector2(1018, 2736)
 
-[node name="Scout4" parent="Enemies" index="3" instance=ExtResource("18_eixs4")]
-position = Vector2(1657, 898)
-
-[node name="Scout5" parent="Enemies" index="4" instance=ExtResource("18_eixs4")]
+[node name="Scout5" parent="Enemies" index="3" instance=ExtResource("18_eixs4")]
 position = Vector2(-2320, 2521)
 
-[node name="Scout6" parent="Enemies" index="5" instance=ExtResource("18_eixs4")]
+[node name="Scout6" parent="Enemies" index="4" instance=ExtResource("18_eixs4")]
 position = Vector2(101, 4066)
 
-[node name="Scout7" parent="Enemies" index="6" instance=ExtResource("18_eixs4")]
+[node name="Scout7" parent="Enemies" index="5" instance=ExtResource("18_eixs4")]
 position = Vector2(656, 3319)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
