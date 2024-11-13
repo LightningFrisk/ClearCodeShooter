@@ -19,8 +19,8 @@ func hit():
 		#print(Globals.health)
 		#can_damage = false
 		#$DamageCooldown.start()
-	#if Globals.health <= 0:
-		#queue_free()
+	if Globals.health <= 0:
+		queue_free()
 
 func _process(_delta):
 	#input
