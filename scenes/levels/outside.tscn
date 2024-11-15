@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://umlrcdywwyey" path="res://scenes/objects/light_fan_animation.tscn" id="12_j6ast"]
 [ext_resource type="PackedScene" uid="uid://vhm3k8cj6wsv" path="res://scenes/objects/toilet.tscn" id="15_gnks6"]
 [ext_resource type="PackedScene" uid="uid://2srf5l0cs7j8" path="res://scenes/objects/box.tscn" id="16_hvnk6"]
-[ext_resource type="PackedScene" uid="uid://c20dh1qmn5j43" path="res://scenes/enemies/scout.tscn" id="18_eixs4"]
 [ext_resource type="PackedScene" uid="uid://dv3us2cj5yhy0" path="res://scenes/Items/item.tscn" id="18_tln3c"]
+[ext_resource type="PackedScene" uid="uid://bfm60p78dxi35" path="res://scenes/enemies/bug.tscn" id="19_l5lf6"]
 
 [node name="Outside" instance=ExtResource("1_3vbdl")]
 script = ExtResource("2_r8ty3")
@@ -130,23 +130,8 @@ position = Vector2(630, 15)
 [node name="Enemies" parent="." index="7"]
 metadata/_edit_lock_ = true
 
-[node name="Scout" parent="Enemies" index="0" instance=ExtResource("18_eixs4")]
-position = Vector2(-1115, 3392)
-
-[node name="Scout2" parent="Enemies" index="1" instance=ExtResource("18_eixs4")]
-position = Vector2(1688, 615)
-
-[node name="Scout3" parent="Enemies" index="2" instance=ExtResource("18_eixs4")]
-position = Vector2(1018, 2736)
-
-[node name="Scout5" parent="Enemies" index="3" instance=ExtResource("18_eixs4")]
-position = Vector2(-2320, 2521)
-
-[node name="Scout6" parent="Enemies" index="4" instance=ExtResource("18_eixs4")]
-position = Vector2(101, 4066)
-
-[node name="Scout7" parent="Enemies" index="5" instance=ExtResource("18_eixs4")]
-position = Vector2(656, 3319)
+[node name="bug" parent="Enemies" index="0" instance=ExtResource("19_l5lf6")]
+position = Vector2(1956, 872)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
