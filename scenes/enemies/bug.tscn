@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://d0tm555cqy32w" path="res://graphics/enemies/bug/attack/00030.png" id="21_ugmgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_juu2y"]
-radius = 999.032
+radius = 719.626
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pcjms"]
 radius = 123.016
@@ -169,7 +169,9 @@ position = Vector2(10.7503, 0.000282168)
 rotation = 1.5708
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_3kq32")
-animation = &"walk"
+animation = &"attack"
+frame = 20
+frame_progress = 1.0
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.249733, 0.000282288)

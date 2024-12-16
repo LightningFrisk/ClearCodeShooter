@@ -8,15 +8,20 @@ var speed: int = 300
 var health: int = 20
 
 func hit():
-	var direction = (Globals.player_pos - position).normalized()
-	velocity = direction * speed
-	
-	if active:
-		move_and_slide()
+	if can_damage:
+		health -= 10
+	if health <= 0:
+		queue_free()
 
 func _process(_delta):
-	if player_near:
+	var direction = (Globals.player_pos - position).normalized()
+	velocity = direction * speed
+
+	if active:
+		move_and_slide()
 		look_at(Globals.player_pos)
+	#if player_near:
+		
 
 func _on_notice_area_2d_body_entered(_body: Node2D) -> void:
 	active = true
