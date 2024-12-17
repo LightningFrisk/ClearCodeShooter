@@ -142,7 +142,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5nfsl"]
-radius = 35.0
+radius = 45.9997
 height = 130.0
 
 [node name="bug" type="CharacterBody2D"]
@@ -164,21 +164,28 @@ collision_layer = 16
 shape = SubResource("CircleShape2D_pcjms")
 debug_color = Color(0.348197, 0.61986, 0, 0.42)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10.7503, 0.000282168)
 rotation = 1.5708
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_3kq32")
-animation = &"attack"
-frame = 20
-frame_progress = 1.0
+animation = &"walk"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.249733, 0.000282288)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5nfsl")
 
+[node name="Node" type="Node" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="Node"]
+
+[node name="HitTimer" type="Timer" parent="Node"]
+
 [connection signal="body_entered" from="NoticeArea2D" to="." method="_on_notice_area_2d_body_entered"]
 [connection signal="body_exited" from="NoticeArea2D" to="." method="_on_notice_area_2d_body_exited"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
 [connection signal="body_exited" from="AttackArea2D" to="." method="_on_attack_area_2d_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Node/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Node/HitTimer" to="." method="_on_hit_timer_timeout"]
